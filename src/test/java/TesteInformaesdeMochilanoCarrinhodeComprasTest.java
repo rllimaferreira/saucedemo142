@@ -2,39 +2,24 @@
 
 // import org.junit.Test;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 // import org.junit.Before;
 // import org.junit.After;
 // import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.core.IsNot.not;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.time.Duration;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebDriver; // biblioteca principal do Selenium
-
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver; // biblioteca do ChromeDriver
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.Keys;
-import java.util.*;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.time.Duration;
 
   // 2 - Classe
 public class TesteInformaesdeMochilanoCarrinhodeComprasTest {
@@ -81,11 +66,23 @@ public class TesteInformaesdeMochilanoCarrinhodeComprasTest {
     }
     //assertEquals(driver.findElement(By.cssSelector(".cart_quantity")).getText(), is("1"));
     
-    assertEquals(driver.findElement(By.cssSelector(".cart_quantity")).getText(), is(1));
+    //assertEquals(driver.findElement(By.cssSelector(".cart_quantity")).getText(), is(1));
+
+    assertEquals(driver.findElement(By.cssSelector(".cart_quantity")).getText(), "1");
+
+    
+    //assertEquals(driver.findElement(By.cssSelector("*[data-test=\"inventory-item-name\"]")).getText(), is("Sauce Labs Backpack"));
+
+    
+    assertEquals(driver.findElement(By.cssSelector("*[data-test=\\\"inventory-item-name\\\"]")).getText(), "Sauce Labs Backpack");
     
     
-    assertEquals(driver.findElement(By.cssSelector("*[data-test=\"inventory-item-name\"]")).getText(), is("Sauce Labs Backpack"));
-    assertEquals(driver.findElement(By.cssSelector("*[data-test=\"inventory-item-price\"]")).getText(), is("$29.99"));
+    
+    assertEquals(driver.findElement(By.cssSelector("*[data-test=\\\"inventory-item-price\\\"]")).getText(), "$29.99");
+
+
+
+    // assertEquals(driver.findElement(By.cssSelector("*[data-test=\"inventory-item-price\"]")).getText(), is("$29.99"));
     driver.findElement(By.id("react-burger-menu-btn")).click();
     driver.findElement(By.cssSelector("*[data-test=\"logout-sidebar-link\"]")).click();
     driver.findElement(By.cssSelector(".login_container")).click();
