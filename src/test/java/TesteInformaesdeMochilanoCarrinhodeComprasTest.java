@@ -38,6 +38,7 @@ public class TesteInformaesdeMochilanoCarrinhodeComprasTest {
     driver.manage().window().maximize(); // maximiza a janela do browser
     // js = (JavascriptExecutor) driver;
     // vars = new HashMap<String, Object>();
+    driver.manage().timeouts().implicitlyWait(Duration.ofMillis(10000));
   }
 
   // Depois do Teste
@@ -59,11 +60,11 @@ public class TesteInformaesdeMochilanoCarrinhodeComprasTest {
     // Transição de Página
     driver.findElement(By.cssSelector("*[data-test=\"add-to-cart-sauce-labs-backpack\"]")).click();
     driver.findElement(By.cssSelector("*[data-test=\"shopping-cart-link\"]")).click();
-    {
-      // WebDriverWait wait = new WebDriverWait(driver, 1.0);
-      WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
-      wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cart_quantity")));
-    }
+    // {
+    //   // WebDriverWait wait = new WebDriverWait(driver, 1.0);
+    //   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+    //   wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cart_quantity")));
+    // }
     //assertEquals(driver.findElement(By.cssSelector(".cart_quantity")).getText(), is("1"));
     
     //assertEquals(driver.findElement(By.cssSelector(".cart_quantity")).getText(), is(1));
@@ -74,11 +75,11 @@ public class TesteInformaesdeMochilanoCarrinhodeComprasTest {
     //assertEquals(driver.findElement(By.cssSelector("*[data-test=\"inventory-item-name\"]")).getText(), is("Sauce Labs Backpack"));
 
     
-    assertEquals(driver.findElement(By.cssSelector("*[data-test=\\\"inventory-item-name\\\"]")).getText(), "Sauce Labs Backpack");
+    assertEquals(driver.findElement(By.cssSelector("*[data-test=\"inventory-item-name\"]")).getText(), "Sauce Labs Backpack");
     
     
     
-    assertEquals(driver.findElement(By.cssSelector("*[data-test=\\\"inventory-item-price\\\"]")).getText(), "$29.99");
+    assertEquals(driver.findElement(By.cssSelector("*[data-test=\"inventory-item-price\"]")).getText(), "$29.99");
 
 
 
