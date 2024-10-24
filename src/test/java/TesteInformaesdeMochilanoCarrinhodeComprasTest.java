@@ -5,7 +5,7 @@
 // import org.junit.Before;
 // import org.junit.After;
 // import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.is;
+// import static org.hamcrest.CoreMatchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.Duration;
@@ -16,8 +16,8 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver; // biblioteca principal do Selenium
 import org.openqa.selenium.chrome.ChromeDriver; // biblioteca do ChromeDriver
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+// import org.openqa.selenium.support.ui.ExpectedConditions;
+// import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -75,17 +75,17 @@ public class TesteInformaesdeMochilanoCarrinhodeComprasTest {
     //assertEquals(driver.findElement(By.cssSelector("*[data-test=\"inventory-item-name\"]")).getText(), is("Sauce Labs Backpack"));
 
     
-    assertEquals(driver.findElement(By.cssSelector("*[data-test=\"inventory-item-name\"]")).getText(), "Sauce Labs Backpack");
+    assertEquals(driver.findElement(By.cssSelector("*[data-test='inventory-item-name']")).getText(), "Sauce Labs Backpack");
     
     
     
-    assertEquals(driver.findElement(By.cssSelector("*[data-test=\"inventory-item-price\"]")).getText(), "$29.99");
+    assertEquals(driver.findElement(By.cssSelector("*[data-test='inventory-item-price']")).getText(), "$29.99");
 
 
 
     // assertEquals(driver.findElement(By.cssSelector("*[data-test=\"inventory-item-price\"]")).getText(), is("$29.99"));
     driver.findElement(By.id("react-burger-menu-btn")).click();
-    driver.findElement(By.cssSelector("*[data-test=\"logout-sidebar-link\"]")).click();
+    driver.findElement(By.cssSelector("*[data-test='logout-sidebar-link']")).click();
     driver.findElement(By.cssSelector(".login_container")).click();
   }
 }
